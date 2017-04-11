@@ -5,7 +5,7 @@ session_start();
 //  Crop&Merge by Vincent40 -using Jcrop and others- 
 //
 
-$max_image=200000; // grandezza massima immagine
+$max_image=300000; // grandezza massima immagine
 if ($_POST["label"]) {
     $label = $_POST["label"];
 }

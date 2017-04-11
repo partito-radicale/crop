@@ -196,8 +196,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   <li><a href="http://www.radicalparty.org/it">Radicalparty</a> <span class="divider">/</span></li>
   <li class="active">Tesseramento</li>
 </ul>
-<h1>Partito Radicale - tessera digitale</h1>
+<h1>Partito Radicale - Overlay Immagine</h1>
 </div>
+	    <form method="post" id="fileinfo" name="fileinfo" onsubmit="return submitForm();">
+        <label>Seleziona una immagine:</label><br>
+        <input type="file" name="file" class="btn btn-large btn-inverse" required />
+        <input type="submit" value="Upload"  class="btn btn-large btn-inverse"/>
+       </form>
 		
 <?php		
 
@@ -226,7 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		
 
 		<p>
-			<b>.: Crea la tua tessera digitale:. </b> Seleziona da <i>Scegli file</i>
+			<b>.: Crea l'overlay della tua immagine con il logo del PR:. </b> Seleziona da <i>Scegli file</i>
 			la tua immagine e caricala con  <i>Upload</i>, successivamente ritaglia la parte della foto che intendi utilizzare e premi il pulsante <i>Ritaglia</i>
 		</p>
 
@@ -234,12 +239,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	</div>
 	</div>
 	</div>
-	
-	    <form method="post" id="fileinfo" name="fileinfo" onsubmit="return submitForm();">
-        <label>Seleziona una immagine:</label><br>
-        <input type="file" name="file" class="btn btn-large btn-inverse" required />
-        <input type="submit" value="Upload"  class="btn btn-large btn-inverse"/>
-    </form>
     <div id="output"></div>
 	</div>
 	</body>
