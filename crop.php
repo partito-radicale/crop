@@ -8,7 +8,7 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-	$sorgente= "/crop/temporanei/".$_SESSION['namez'].".".$_SESSION['extensionz'];
+	$sorgente= "http://apps.nrptt.org/crop/temporanei/".$_SESSION['namez'].".".$_SESSION['extensionz'];
 	$destinazione= $_SESSION['namez'].'new-image.jpg'; 
 	$targ_w = $targ_h = 1200;//650;
 	$jpeg_quality = 90;
@@ -53,10 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	imagepng($image, $myprova);
 	imagedestroy($image);
 
-	$mypathprova="/crop/".$myprova;
+	$mypathprova="http://apps.nrptt.org/crop/".$myprova;
 	$stars=imagecreatefrompng($mypathprova);
 
-	$gradient=imagecreatefrompng("/crop/upper.png");
+	$gradient=imagecreatefrompng("http://apps.nrptt.org/crop/upper.png");
 
 	imagecopy($stars, $gradient, 0, 0, 0, 0, 1200, 1200);
    
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	imagedestroy($stars);
 	imagedestroy($gradient);
 
-	$_SESSION['myimage']="/crop/".$nomeradicali;
+	$_SESSION['myimage']="http://apps.nrptt.org/crop/".$nomeradicali;
 	$_SESSION["radicale"] = true;
 	
 	unlink($destinazione);
@@ -154,9 +154,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     };
 					var filename = $('input[type=file]').val().split('\\').pop();
          
-					xmlhttp.open("GET", "/crop/session_write.php?session_name=" + filename, true);// + str
+					xmlhttp.open("GET", "http://apps.nrptt.org/crop/session_write.php?session_name=" + filename, true);// + str
                     xmlhttp.send();					
-			        window.location.href =  "/crop/crop.php";
+			        window.location.href =  "http://apps.nrptt.org/crop/crop.php";
                }
 			  
             }).done(function( data ) {
@@ -208,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			echo '<img src="'.$_SESSION["myimage"].'" alt="" width="500" height="500"/>';  
 			$_SESSION["radicale"] == false;
 		}else{
-			echo '<img src="/crop/temporanei/'.$_SESSION['namez'].'.'.$_SESSION['extensionz'].'" id="cropbox" />';
+			echo '<img src="http://apps.nrptt.org/crop/temporanei/'.$_SESSION['namez'].'.'.$_SESSION['extensionz'].'" id="cropbox" />';
 		}
 	}
 
